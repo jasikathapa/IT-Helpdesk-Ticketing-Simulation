@@ -12,7 +12,6 @@ High
 
 ## User Reported Issue
 User account locked after multiple failed login attempts.\
-<img width="550" height="400" alt="image" src="https://github.com/user-attachments/assets/f0ad4596-5a74-41c5-8a2e-56b87dca1900" />
 
 ## Investigation Performed
 - Verified user identity
@@ -23,19 +22,14 @@ User account locked after multiple failed login attempts.\
 
 ## Resolution
 
-
-
-
-
-
-
-
+https://github.com/user-attachments/assets/c10f8b3b-e882-4734-b98b-fa3205f3eb07
 
 - Reset password in Active Directory Users and Computers
-- ✔ Enabled "User must change password at next logon"
-- ✔ Enabled Unlocked user account 
+- Enabled "User must change password at next logon" ✔
+- Enabled "Unlocked user account" ✔
 - Provided temporary credentials to user
-- Advised user regarding password policy requirements
+- Advised user regarding password policy requirements 
+
 ---
 
 ## Outcome
