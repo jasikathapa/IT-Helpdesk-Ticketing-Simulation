@@ -46,7 +46,8 @@ Booted the system into **Safe Mode with Networking**
 - Restarted the system and verified Active Directory services were operational  
 
 ---
-<img width="1026" height="854" alt="Screenshot 2026-05-20 231632" src="https://github.com/user-attachments/assets/f11cc6aa-b6f1-48b5-8c3d-785eaa8401d2" />
+<img width="700" height="600" alt="Screenshot 2026-05-20 231740" src="https://github.com/user-attachments/assets/9106fde8-7a8c-472c-bbd7-06aa7a1cca07" />
+
 
 ## Post-Incident Action
 After service restoration, domain controller compuetr name  was changed using PowerShell for reference:
