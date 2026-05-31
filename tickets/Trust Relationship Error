@@ -1,0 +1,37 @@
+# ⚠️ Troubleshooting: Trust Relationship Error
+
+## Issue
+After renaming the Domain Controller computer name, authentication to Active Directory failed and I was unable to log back into the domain.
+
+The change caused a breakdown in the secure relationship between the Domain Controller and domain authentication services.
+<img width="500" height="500" alt="AD broken" src="https://github.com/user-attachments/assets/f2d7a3e7-8e67-489f-95e4-a28df3a1dcda" />
+
+---
+
+## Cause
+- Domain Controller computer name was changed after deployment
+- Active Directory dependencies and trust relationships became inconsistent
+- Domain authentication could no longer complete successfully
+
+---
+
+- broken secure channel between client and domain
+
+
+<img width="1026" height="854" alt="oldname" src="https://github.com/user-attachments/assets/0a6f9f39-4397-4815-a8c5-fbed28872a14" />
+Reboot and hold f8 to enter boot menu
+select 'safe mode with networking'
+
+Login with administrator account
+
+open the Registry Editor
+In the left pane navigate to
+HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\SchedulingAgent
+In the right pane, double click OldName
+
+The Value Data should be the old name of your PC . . .
+
+Control panel -> system -> rename this pc
+Enter the old name and restart
+
+<img width="1045" height="983" alt="AD broken" src="https://github.com/user-attachments/assets/f2d7a3e7-8e67-489f-95e4-a28df3a1dcda" />
