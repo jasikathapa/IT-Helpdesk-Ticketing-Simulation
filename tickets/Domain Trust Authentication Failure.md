@@ -18,9 +18,12 @@ Unable to log in to the domain after system changes were made on the Domain Cont
 ---
 
 ## Issue Description
-After renaming the Domain Controller, Active Directory authentication failed and domain logins were no longer possible. This resulted in a broken trust relationship between the server and the domain.
+
+After renaming the Domain Controller, Active Directory authentication failed and domain logins were no longer possible. This resulted in a broken trust relationship between the server and the domain.\
 
 ---
+<img width="600" height="600" alt="AD broken" src="https://github.com/user-attachments/assets/f2d7a3e7-8e67-489f-95e4-a28df3a1dcda" />
+
 
 ## Root Cause
 - Domain Controller computer name was changed after Active Directory was configured
@@ -36,11 +39,21 @@ After renaming the Domain Controller, Active Directory authentication failed and
 ---
 
 ## Resolution
-- Booted Domain Controller into Safe Mode with Networking
-- Logged in using local/recovery administrative account
-- Restored system configuration to re-establish domain functionality
-- Restarted server and verified Active Directory services
+Booted the system into **Safe Mode with Networking**  
+- Accessed a local administrative recovery account  
+- Restored system configuration to re-establish domain functionality  
+- Reverted the Domain Controller name to its original configuration  
+- Restarted the system and verified Active Directory services were operational  
 
+---
+<img width="1026" height="854" alt="Screenshot 2026-05-20 231632" src="https://github.com/user-attachments/assets/f11cc6aa-b6f1-48b5-8c3d-785eaa8401d2" />
+
+## Post-Incident Action
+After service restoration, domain controller compuetr name  was changed using PowerShell for reference:
+
+```powershell
+Rename-Computer -NewName "NEW-DC-NAME" -Restart
+```
 ---
 
 ## Outcome
